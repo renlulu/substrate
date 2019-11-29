@@ -24,7 +24,7 @@ use support::{
 	traits::{Get, ChangeMembers, Currency}
 };
 use primitives::H256;
-use sr_primitives::{
+use sp_runtime::{
 	Perbill, BuildStorage, testing::Header, traits::{BlakeTwo256, IdentityLookup, Block as BlockT},
 };
 use crate as elections;
@@ -141,8 +141,8 @@ impl elections::Trait for Test {
 	type DecayRatio = DecayRatio;
 }
 
-pub type Block = sr_primitives::generic::Block<Header, UncheckedExtrinsic>;
-pub type UncheckedExtrinsic = sr_primitives::generic::UncheckedExtrinsic<u32, u64, Call, ()>;
+pub type Block = sp_runtime::generic::Block<Header, UncheckedExtrinsic>;
+pub type UncheckedExtrinsic = sp_runtime::generic::UncheckedExtrinsic<u32, u64, Call, ()>;
 
 support::construct_runtime!(
 	pub enum Test where

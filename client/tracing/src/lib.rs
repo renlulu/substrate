@@ -38,7 +38,7 @@ use std::time::{Duration, Instant};
 use parking_lot::Mutex;
 use tracing_core::{event::Event, Level, metadata::Metadata, span::{Attributes, Id, Record}, subscriber::Subscriber};
 
-use substrate_telemetry::{telemetry, SUBSTRATE_INFO};
+use sc_telemetry::{telemetry, SUBSTRATE_INFO};
 use grafana_data_source::{self, record_metrics};
 
 /// Used to configure how to receive the metrics
@@ -189,7 +189,7 @@ fn print_log(span_datum: SpanDatum) {
 		span_datum.line,
 		span_datum.overall_time.as_nanos()
 	);
-	log::info!(target: "substrate_tracing", "{}", message);
+	log::info!(target: "sc_transaction", "{}", message);
 }
 
 fn send_telemetry(span_datum: SpanDatum) {

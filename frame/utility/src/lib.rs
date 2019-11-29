@@ -23,7 +23,7 @@
 use rstd::prelude::*;
 use support::{decl_module, decl_event, Parameter, weights::SimpleDispatchInfo};
 use system::ensure_root;
-use sr_primitives::{traits::Dispatchable, DispatchError};
+use sp_runtime::{traits::Dispatchable, DispatchError};
 
 /// Configuration trait.
 pub trait Trait: system::Trait {
@@ -65,7 +65,7 @@ mod tests {
 
 	use support::{assert_ok, assert_noop, impl_outer_origin, parameter_types, impl_outer_dispatch};
 	use primitives::H256;
-	use sr_primitives::{Perbill, traits::{BlakeTwo256, IdentityLookup}, testing::Header};
+	use sp_runtime::{Perbill, traits::{BlakeTwo256, IdentityLookup}, testing::Header};
 
 	impl_outer_origin! {
 		pub enum Origin for Test {}

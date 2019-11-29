@@ -1,5 +1,5 @@
 [package]
-name = "substrate-tracing"
+name = "sc-transaction"
 version = "2.0.0"
 license = "GPL-3.0"
 authors = ["Parity Technologies <admin@parity.io>"]
@@ -10,7 +10,7 @@ log = { version = "0.4.8" }
 parking_lot = "0.9.0"
 tracing-core = "0.1.7"
 
-substrate-telemetry = { path = "../telemetry" }
+sc-telemetry = { path = "../telemetry" }
 grafana-data-source = { path = "../grafana-data-source" }
 
 [dev-dependencies]
